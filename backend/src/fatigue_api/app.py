@@ -342,7 +342,25 @@ def create_app(runtime: Optional[Runtime] = None) -> FastAPI:
                         await ws.send_json({"type": "acked", "t": t})
                     u = await run_in_threadpool(session.process, Frame(t, image=img))
                     op = float(getattr(session.sp.ref, "open_level", math.nan))
-                    await ws.send_json(clean({"type": "tick", "t": t, "open_level": op, "samples": [], "progress": None}))
+                    
+                    
+                    
+                    f = getattr(session, "last_features", {})
+                    samples = [[
+                          t,
+                         f.get("ear", math.nan),
+                         f.get("pitch", math.nan),
+                         f.get("mar", math.nan),
+                          f.get("face_found", 0.0),
+                    ]]
+                    
+                    await ws.send_json(clean({
+                         "type": "tick",
+                         "t": t,
+                          "open_level": op,
+                         "samples": samples,
+                         "progress": None,
+                    }))
                     if u is not None:
                         await emit(u, t)
             perf = session.perf.summary()

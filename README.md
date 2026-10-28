@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Night Watch · Driver Fatigue Monitoring (full stack)
 
 Fatigue monitoring for vehicles that have **no OEM driver-monitoring system** (goods trucks, ambulances, buses, cabs).
@@ -54,6 +53,3 @@ For a production build served from another origin, set `VITE_API_URL` and `FATIG
 `POST /api/cabin/route · /api/sessions/demo`, `GET|DELETE /api/pretrip/history/{driver}`,
 `WS /ws/live` (start message, then `tick`/`update`/`acked`/`ended`; client sends `ack`, `stop`, `speed` or JPEG bytes),
 `WS /ws/pretrip`. Interactive docs at `http://localhost:8000/docs`.
-=======
-# Driver-drowsiness-detection
->>>>>>> a448fd3dbac5d6da6f55178939ed014848e415c2

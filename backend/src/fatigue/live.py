@@ -97,7 +97,10 @@ class LiveSession:
             if self.extractor is None:
                 raise RuntimeError("image frame received but no extractor configured")
             feats = self.extractor.process(frame.image, frame.t)
+        
+        self.last_features = feats    
         w = self.sp.push(feats)
+        
         self.perf.add(time.perf_counter() - t0)
         return self._on_window(w, frame.t) if w is not None else None
 
