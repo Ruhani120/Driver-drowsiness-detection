@@ -4,7 +4,6 @@ import Live from "./pages/Live";
 import Pretrip from "./pages/Pretrip";
 import Report from "./pages/Report";
 import Depot from "./pages/Depot";
-import Evaluation from "./pages/Evaluation";
 import Cabin from "./pages/Cabin";
 import About from "./pages/About";
 
@@ -14,7 +13,6 @@ const ROUTES = [
   { path: "report", label: "Shift report", icon: "≋", el: (a) => <Report id={a} /> },
   { path: "depot", label: "Depot", icon: "▦", el: () => <Depot /> },
   { path: "cabin", label: "Cabin", icon: "◫", el: () => <Cabin /> },
-  { path: "evaluation", label: "Evidence", icon: "∿", el: () => <Evaluation /> },
   { path: "about", label: "About", icon: "i", el: () => <About /> },
 ];
 
@@ -66,9 +64,9 @@ export default function App() {
   return (
     <div className="app">
       <header className="top">
-        <a className="brand" href="#/live" aria-label="Night Watch home">
+        <a className="brand" href="#/live" aria-label="SWACHETAN home">
           <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden><path d="M3 16c4-8 22-8 26 0-4 8-22 8-26 0z" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="16" cy="16" r="4.5" fill="currentColor" /></svg>
-          <span>Night<b>Watch</b></span>
+          <span>SWACH<b>ETAN</b></span>
         </a>
         <nav aria-label="Sections">
           {ROUTES.map((r) => (
