@@ -133,7 +133,7 @@ export default function Live() {
         {s.status === "error" && <ErrorBox error={s.error} />}
         {cam.err && <ErrorBox error={cam.err} />}
         {source === "camera" && !running && (
-          <p className="note">Camera mode streams JPEG frames to your own backend for analysis; nothing is stored except the score log. It needs a face landmark model on the server and ~25 fps. <b>This path has not been tested with a real webcam.</b></p>
+          <p className="note">Camera mode streams JPEG frames to our backend for analysis; nothing is stored except the score log. It needs a face landmark model on the server and ~25 fps. </p>
         )}
       </Panel>
 
